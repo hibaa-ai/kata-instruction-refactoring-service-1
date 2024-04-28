@@ -23,6 +23,8 @@ public class ExportCampaignServiceTest {
 
     @Mock
     private MailService mailServiceMock;
+    @Mock
+    private ExcelService excelService;
 
     @Captor
     private ArgumentCaptor<Survey> surveyCaptor;
@@ -34,7 +36,7 @@ public class ExportCampaignServiceTest {
     public void init() {
         MockitoAnnotations.initMocks(this);
 
-        service = new ExportCampaignService(campaignClientMock, mailServiceMock);
+        service = new ExportCampaignService(campaignClientMock, mailServiceMock, excelService);
         service = Mockito.spy(service);
     }
 
