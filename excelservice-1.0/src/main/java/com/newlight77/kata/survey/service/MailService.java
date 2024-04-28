@@ -23,13 +23,13 @@ public class MailService {
     this.mailServiceConfig = mailServiceConfig;
   }
 
-  public void send(File attachment) {
+  public void sendEmailWithAttachment(String subject, String text, File attachment) {
     MimeMessagePreparator messagePreparator = mimeMessage -> {
       MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage, true);
       messageHelper.setFrom(mailServiceConfig.getFrom());
       messageHelper.setTo(mailServiceConfig.getTo());
-      messageHelper.setSubject("Campaign Results");
-      messageHelper.setText("Hi,\n\nYou will find in the attached file the campaign results.");
+      messageHelper.setSubject(subject);
+      messageHelper.setText(text);
 
       FileSystemResource file = new FileSystemResource(attachment);
       messageHelper.addAttachment(file.getFilename(), file);
@@ -41,5 +41,5 @@ public class MailService {
       throw new RuntimeException("An error occurred while sending an email", e);
     }
   }
-
 }
+
