@@ -1,20 +1,20 @@
 package com.newlight77.kata.survey.service;
 
+import com.newlight77.kata.survey.client.CampaignClient;
 import com.newlight77.kata.survey.model.AddressStatus;
 import com.newlight77.kata.survey.model.Campaign;
 import com.newlight77.kata.survey.model.Survey;
-import com.newlight77.kata.survey.client.CampaignClient;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-@Component
+@Service
 public class ExportCampaignService {
 
   private final CampaignClient campaignWebService;
