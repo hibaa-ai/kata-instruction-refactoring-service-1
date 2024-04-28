@@ -94,7 +94,7 @@
 //                "          \"postalCode\" : \"75001\",\n" +
 //                "          \"city\" : \"Paris\"\n" +
 //                "        },\n" +
-//                "        \"status\" : \"TODO\"\n" +
+//                "        \"status\" : \"to do\"\n" +
 //                "    }] \n" +
 //                "}";
 //        Campaign campaign = JsonUtil.instance().fromJson(campaignJson, Campaign.class);
